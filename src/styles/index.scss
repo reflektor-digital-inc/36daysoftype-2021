@@ -1,0 +1,111 @@
+@import "vars";
+@import "fonts";
+@import "typography";
+@import "animations";
+
+html, body {
+  @include fk-display-regular(16, 0, 1.2);
+  cursor: default;
+  padding: 0;
+  margin: 0;
+  line-height: 1em;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  background-color: rgba($black, 1);
+  color: $white;
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    //text-decoration: none;
+  }
+}
+
+/* Font smoothing */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+
+  body {
+    overflow-x: hidden;
+  }
+}
+
+video {
+  display: none;
+}
+
+.tp-dfwv {
+  z-index: 100;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  @include breakpoint($mobile) {
+    @include webkit-smooth-scroll;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Perfect-Scrollbar classes */
+.ps {
+  &__rail-x, &__rail-y {
+    position: absolute;
+    display: none;
+  }
+}
+
+.global {
+  &__theme {
+    &--dark {
+      background-color: $black;
+      color: $white;
+    }
+    &--light {
+      background-color: $white;
+      color: $black;
+    }
+  }
+  &__page {
+    z-index: $page-z;
+    //padding-top: $nav-height;
+    .no-touch & {
+      @include full-size(absolute);
+      overflow: hidden;
+    }
+    @include breakpoint($tablet) {
+      //padding-top: $nav-height-tablet;
+    }
+    @include breakpoint($phone) {
+      //padding-top: $nav-height-phone;
+    }
+  }
+  &__common-center-container {
+    position: relative;
+    max-width: $CCC-max-width;
+    margin: 0 auto;
+    @include breakpoint(max-width 1919px) {
+      max-width: calc(100vw - #{$CCC-horizontal-margin * 2});
+    }
+    @include breakpoint($tablet) {
+      max-width: calc(100vw - #{$CCC-horizontal-margin-tablet * 2});
+      width: calc(100vw - #{$CCC-horizontal-margin-tablet * 2});
+    }
+    @include breakpoint($phone) {
+      max-width: calc(100vw - #{$CCC-horizontal-margin-phone * 2});
+      width: calc(100vw - #{$CCC-horizontal-margin-phone * 2});
+    }
+  }
+}

@@ -1,0 +1,84 @@
+@import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";
+// Defaults
+$default-width: 1920 !default;
+$default-height: 900 !default;
+$default-total-columns: 40 !default;
+$default-inline-svg-width: 100px !default;
+$default-os-font-family-sans-serif:  system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Oxygen, Cantarell, sans-serif;
+
+// Breakpoints
+$iphone-plus: (width 320px 414px) (height 600px 736px); // iPhone 6 Plus, 6s Plus, 7 Plus
+$iphone: (width 320px 414px) (height 500px 599px); // iPhone 6, 6s, 7
+$iphone-small: (width 320px 414px) (height 300px 499px); // iPhone 4, SE, 5, 5s
+$phone-small: (width 300px 414px) (height 300px 600px);
+$phone: (width 300px 727px);
+$tablet: (width 728px 1024px);
+$mobile: (max-width 1024px); // tablet and phone
+$desktop-narrow: (width 1025px 1399px); // lower resolution displays
+$desktop-common: (width 1366px 1439px); // most common desktop resolution
+$desktop: (min-width 1025px); // all desktop devices
+$desktop-hd: (min-width 1440px); // essentially all retina macbook pros
+$ultra-hd: (min-width 1921px);
+
+/* Colours */
+// Default Colours
+$black: #000;
+$white: #fff;
+$error-red: #e62048;
+$error-pink: #ff00c6;
+$very-soft-cyan: #89f0de;
+$very-soft-blue: #89cff0;
+$very-soft-red: #f0899c;
+$very-soft-lime-green: #9cf089;
+$black-alpha: rgba(0, 0, 0, 0.637);
+$bg-gradient : linear-gradient(to top, rgb(31, 8, 49) 5%, rgba(81, 41, 155, 0.8) 100%);
+$popsicle-gradient: linear-gradient(177.92deg, #2ae7ff -4.45%, #f9076a 77.58%, #ff4605 151.5%);
+
+// Project Colours
+$purple: #c839ac;
+$light-grey: #f0f0f0;
+$active-pink: #c839ac;
+
+// Font Families
+$font-fk-display-regular: "FK Display Regular", $default-os-font-family-sans-serif;
+$font-fk-display-regular-alt: "FK Display Regular Alt", $default-os-font-family-sans-serif;
+$font-fk-grotesk-neue: "FK Grotesk Neue", $default-os-font-family-sans-serif;
+$font-gosha-sans: "Gosha Sans", $default-os-font-family-sans-serif;
+$font-coign-pro-36-semibold: "Coign Pro 36 Semibold", $default-os-font-family-sans-serif;
+
+// Z-Indices
+$non-functionals-z: 100000;
+$navigation-header-z: 10;
+$information-overlay-z: 11;
+$page-z: 10;
+$global-canvas-z: 0;
+$global-loader-z: 100;
+$main-navigation-logo-z: 5;
+$super-overlay-z: 105;
+
+// Common Center Container
+// NOTE 2019-03-22 andrewkim: abbreviate common-center-container to CCC
+$CCC-max-width: 1430px;
+$CCC-horizontal-margin: 85px;
+$CCC-horizontal-margin-tablet: 40px;
+$CCC-horizontal-margin-phone: 20px;
+
+// Columns
+$total-columns: 12;
+$total-gutters: 11;
+$total-columns-mobile: 20; // TODO 2019-03-22 andrewkim: Update with project values
+$column-width: 7.692307692%;
+$gutter-width: 10px;
+
+// Video Player
+$controls-container-height: 80px;
+$button-width: 80px;
+
+// Navigation
+$nav-header-height: 100px;
+$nav-header-height-tablet: 100px;
+$nav-header-height-phone: 100px;
+$nav-padding-vertical: 45px;
+$nav-padding-horizontal: 60px;
+$nav-padding-vertical-mobile: 20px;
+$nav-padding-horizontal-mobile: 20px;

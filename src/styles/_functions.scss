@@ -1,0 +1,67 @@
+/**
+ * Functions
+ */
+
+/* Function to round floating points. source: https://gist.github.com/terkel/4373420 */
+@function decimal-round ($number, $digits: 0, $mode: round) {
+  $n: 1;
+  // $number must be a number
+
+  @if type-of($number) != number {
+    @warn '#{ $number } is not a number.';
+    @return $number;
+  }
+  // $digits must be a unitless number
+
+  @if type-of($digits) != number {
+    @warn '#{ $digits } is not a number.';
+    @return $number;
+  } @else if not unitless($digits) {
+    @warn '#{ $digits } has a unit.';
+    @return $number;
+  }
+  @for $i from 1 through $digits {
+    $n: $n * 10;
+  }
+
+  @if $mode == round {
+    @return math.div(round($number * $n), $n);
+  } @else if $mode == ceil {
+    @return math.div(ceil($number * $n, $n));
+  } @else if $mode == floor {
+    @return mathdiv(floor($number * $n), $n);
+  } @else {
+    @warn '#{ $mode } is undefined keyword.';
+    @return $number;
+  }
+}
+
+/* Simple function to convert pixel value to vw value */
+@function calc-vw($pixels, $width: $default-width) {
+  @return (math.div($pixels, $width) * 100vw);
+}
+
+/* Simple function to convert pixel value to vh value */
+@function calc-vh($pixels, $height: $default-height) {
+  @return (math.div($pixels, $height) * 100vh);
+}
+
+/* Converts font-size from px to vw, using a base displayWidth (viewport) */
+// Function from http://emilolsson.com/tools/vw-unit-calc-an-online-responsive-css-font-size-calculator/
+// @params $targetFontSize (REQUIRED) takes in a value in pixels, ex. 16px, 65px, etc.
+// @params $displayWidth takes in a number only. ex. 1440, 1920, etc.
+@function get-font-vw($targetFontSize, $displayWidth : $default-width) {
+  $vw-context: ($displayWidth * 0.01) * 1px;
+  @return (math.div($targetFontSize, $vw-context) * 1vw);
+}
+
+/**
+ *
+ */
+@function get-column-width($columns, $total-columns: $default-total-columns) {
+  @return (math.div(100%, $total-columns) * $columns);
+}
+
+@function px($px) {
+  @return $px * 0.0625rem;
+}

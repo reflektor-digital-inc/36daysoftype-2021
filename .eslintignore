@@ -1,0 +1,17 @@
+scripts
+dist
+docs
+cfg
+lambda
+src/vendor
+src/assets
+src/static
+src/artifacts
+pixi-viewport.js
+frontend-next/**/*
+start-dev-process.js
+env.js
+contracts
+test/**/*
+node_modules
+.eslintrc.js

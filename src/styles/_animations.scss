@@ -1,0 +1,42 @@
+@import "eases";
+
+/* Generic Vue Fade Transition */
+.fade {
+  &-enter-active {
+    transition: opacity 0.2s linear;
+  }
+  &-leave-active {
+    transition: opacity 0.5s linear;
+  }
+  &-fast-enter-active {
+    transition: opacity 0.3s $easeOutSine;
+  }
+  &-fast-leave-active {
+    transition: opacity 0.15s $easeInSine;
+  }
+  &-enter-from, &-leave-to, &-fast-enter-from, &-fast-leave-to {
+    opacity: 0;
+  }
+  &-leave-from, &-enter-to, &-fast-leave-from, &-fast-enter-to {
+    opacity: 1;
+  }
+}
+
+@keyframes wrappedUnderline {
+  0% {
+    background-size: 100% 1px;
+    background-position: 100% 100%;
+  }
+  66% {
+    background-position: 100% 100%;
+    background-size: 0% 1px;
+  }
+  67% {
+    background-size: 0% 1px;
+    background-position: 0% 100%;
+  }
+  100% {
+    background-size: 100% 1px;
+    background-position: 0% 100%;
+  }
+}

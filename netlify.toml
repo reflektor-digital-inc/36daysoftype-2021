@@ -1,0 +1,22 @@
+[Settings]
+# Add your API ID here.
+ID = ""
+
+# Settings in the [build] context are global and are applied to all contexts unless otherwise overridden by more specific contexts.
+[build]
+base    = "/"
+publish = "dist/"
+environment = { NODE_VERSION = "14.16.0", YARN_VERSION = "1.22.0"}
+command = "yarn build"
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+
+[[headers]]
+# Define which paths this specific [[headers]] block will cover.
+for = "/*"
+
+#  [headers.values]
+#    Basic-Auth = "dev:reflektor-digital"

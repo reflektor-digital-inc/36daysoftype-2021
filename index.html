@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>36 Days of Type - 2021</title>
+
+    <!--
+      -- ------------------------------------------------------------
+      -- FAVICONS
+      -- ------------------------------------------------------------
+      -- Generate favicons here: https://realfavicongenerator.net/ --
+      -- ------------------------------------------------------------
+    -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+    <link rel="icon" href="/favicons/favicon.svg" />
+    <link
+      rel="icon" type="image/png"
+      sizes="32x32" href="/favicons/favicon-32x32.png"
+    />
+    <link
+      rel="icon" type="image/png"
+      sizes="16x16" href="/favicons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/favicons/site.webmanifest" />
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#000000" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!--
+      -- Social sharing meta tags --
+      -- Source: https://css-tricks.com/essential-meta-tags-social-media/ --
+    -->
+    <meta property="og:title" content="36 Days of Type - 2021" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://36days-21.reflektor.digital/images/socialshare.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://36days-21.reflektor.digital/" />
+    <meta property="og:description" content="Created by the Reflektor Digital development team, 36 Days of Type is a collection of 36 interactive WebGL experiences. Explore each letter and number, find your favourite, and claim it as an NFT on the Polygon blockchain." />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://36days-21.reflektor.digital/images/socialshare.jpg" />
+
+    <!-- from https://github.com/chnejohnson/vue-dapp -->
+    <script>
+      window.global = window
+      let global = globalThis
+    </script>
+
+    <script type="module">
+      import process from 'process'
+      window.process = process
+    </script>
+
+    <script type="module">
+      import buffer from 'buffer'
+      window.Buffer = buffer.Buffer
+    </script>
+
+    <script type="module">
+      import util from 'util'
+      window.util = util
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
